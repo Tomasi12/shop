@@ -1,0 +1,67 @@
+# Store-specific settings: keep the merchant's local configuration private.
+/config/settings_data.json
+/config/settings_data.json.*
+# Market-specific overrides contain store identifiers.
+/sections/*.context.*.json
+/templates/*.context.*.json
+
+# Local preparation and audit artifacts.
+/.github-prep-baseline.json
+/.audit-local/
+/.codex/
+
+# Shopify CLI state and local authentication/configuration.
+.shopify/
+.shopify-cli.yml
+shopify.theme.toml
+config.yml
+.env
+.env.*
+*.env
+.theme-access
+
+# Credentials and private keys.
+.npmrc
+.netrc
+.git-credentials
+.aws/
+.ssh/
+credentials.json
+service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# Local dependencies, caches, logs, and editor/OS state.
+node_modules/
+.cache/
+coverage/
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Backups and data exports may contain customer or store data.
+/backups/
+/exports/
+*.bak
+*.backup
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.csv
+*.tsv
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
