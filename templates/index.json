@@ -9,8 +9,65 @@
  */
 {
   "sections": {
+    "single_product": {
+      "type": "featured-product",
+      "blocks": {
+        "title": { "type": "title", "settings": { "heading_size": "h1" } },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": false } },
+        "description": { "type": "description", "settings": {} }
+      },
+      "block_order": ["title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description"],
+      "settings": {
+        "use_store_product": true,
+        "anchor_id": "produs",
+        "prelaunch_heading": "Pregătim ceva nou.",
+        "prelaunch_text": "<p>Revenim în curând cu toate detaliile. Între timp, ne poți scrie.</p>",
+        "color_scheme": "scheme-1",
+        "secondary_background": false,
+        "media_size": "large",
+        "media_position": "left",
+        "media_fit": "contain",
+        "constrain_to_viewport": true,
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "single_product_about": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": { "type": "heading", "settings": { "heading": "Despre MATyHOUSE", "heading_size": "h2" } },
+        "text": { "type": "text", "settings": { "text": "<p>Ne inspirăm din momentele simple ale vieții de zi cu zi. Credem în alegeri făcute cu grijă și în lucrurile care își găsesc firesc locul acasă.</p>" } }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "anchor_id": "despre",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "single_product_contact": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Hai să vorbim",
+        "heading_size": "h2",
+        "color_scheme": "scheme-1",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "rich_text_eg6r9V": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "heading_dXh8pe": {
           "type": "heading",
@@ -41,6 +98,7 @@
     },
     "image_banner": {
       "type": "image-banner",
+      "disabled": true,
       "blocks": {
         "heading": {
           "type": "heading",
@@ -81,6 +139,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured products",
         "heading_size": "h2",
@@ -109,6 +168,9 @@
     }
   },
   "order": [
+    "single_product",
+    "single_product_about",
+    "single_product_contact",
     "rich_text_eg6r9V",
     "image_banner",
     "featured_collection"

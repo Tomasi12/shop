@@ -1,0 +1,14 @@
+{% comment %}A public pre-launch message without demo prices or product claims.{% endcomment %}
+<div class="single-product-empty color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width page-width--narrow center">
+    <p class="caption-with-letter-spacing">{{ shop.name | escape }}</p>
+    <h2 class="h0">{{ section.settings.prelaunch_heading | escape }}</h2>
+    <div class="rte">{{ section.settings.prelaunch_text }}</div>
+    <a class="button button--secondary" href="{{ routes.root_url }}#ContactForm" data-single-product-link>
+      {{- 'single_product.navigation.contact' | t -}}
+    </a>
+    {%- if request.design_mode -%}
+      <p class="single-product-editor-note">{{ 'single_product.editor_hint' | t }}</p>
+    {%- endif -%}
+  </div>
+</div>

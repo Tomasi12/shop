@@ -84,12 +84,28 @@
                     {% render block %}
                   {%- when 'text' -%}
                     <div class="footer-block__details-content rte">
-                      {{ block.settings.subtext }}
+                      {%- if settings.single_product_mode -%}
+                        {{ settings.single_product_footer_text }}
+                      {%- else -%}
+                        {{ block.settings.subtext }}
+                      {%- endif -%}
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
+                        {%- if settings.single_product_mode -%}
+                          <li>
+                            <a href="{% render 'shopping-destination' %}" class="link link--text list-menu__item list-menu__item--link" data-single-product-link>
+                              {{ 'single_product.navigation.product' | t }}
+                            </a>
+                          </li>
+                        {%- endif -%}
                         {%- for link in block.settings.menu.links -%}
+                          {%- if settings.single_product_mode -%}
+                            {%- if link.type == 'catalog_link' or link.type == 'collections_link' or link.type == 'collection_link' or link.type == 'search_link' or link.type == 'product_link' -%}
+                              {%- continue -%}
+                            {%- endif -%}
+                          {%- endif -%}
                           <li>
                             <a
                               href="{{ link.url }}"

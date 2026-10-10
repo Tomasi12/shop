@@ -8,6 +8,14 @@
  * ------------------------------------------------------------
  */
 {
+  "single_product": {
+    "navigation": {
+      "product": "Produs",
+      "about": "Despre noi",
+      "contact": "Contact"
+    },
+    "editor_hint": "Alege produsul din Setări temă → Magazin cu un produs. Mesajul de pregătire va fi înlocuit automat cu imaginile, prețul și formularul de cumpărare."
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Accesați magazinul folosind parola:",

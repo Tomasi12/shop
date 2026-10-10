@@ -1,10 +1,19 @@
 {%- liquid
   assign product = section.settings.product
+  if section.settings.use_store_product
+    assign product = settings.single_product
+  endif
   if product == null
     assign placeholder = true
   endif
 -%}
 
+{%- if section.settings.anchor_id != blank -%}
+  <div id="{{ section.settings.anchor_id | handleize }}" class="single-product-anchor" tabindex="-1">
+{%- endif -%}
+{%- if section.settings.use_store_product and product == blank -%}
+  {% render 'single-product-empty' %}
+{%- else -%}
 <product-info
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
@@ -21,7 +30,7 @@
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-  {% unless section.settings.product.has_only_default_variant %}
+  {% unless product.has_only_default_variant %}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
@@ -70,7 +79,7 @@
 
   <section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% else %}gradient{% endif %}">
     <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
-      <div class="featured-product product product--{{ section.settings.media_size }} grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 or section.settings.product == blank %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+      <div class="featured-product product product--{{ section.settings.media_size }} grid grid--1-col gradient color-{{ section.settings.color_scheme }} product--{{ section.settings.media_position }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 or product == blank %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
         <div class="grid__item product__media-wrapper">
           {%- unless placeholder -%}
             {% render 'product-media-gallery', product: product, variant_images: variant_images, limit: 1 %}
@@ -113,6 +122,12 @@
                       {{ 'onboarding.product_title' | t }}
                     {%- endunless -%}
                   </h2>
+                {%- when 'description' -%}
+                  {%- if product.description != blank -%}
+                    <div class="product__description rte" {{ block.shopify_attributes }}>
+                      {{ product.description }}
+                    </div>
+                  {%- endif -%}
                 {%- when 'price' -%}
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                     {%- render 'price',
@@ -486,6 +501,10 @@
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
   {% endif %}
 </product-info>
+{%- endif -%}
+{%- if section.settings.anchor_id != blank -%}
+  </div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -496,6 +515,11 @@
     "groups": ["header", "footer"]
   },
   "blocks": [
+    {
+      "type": "description",
+      "name": "t:sections.main-product.blocks.description.name",
+      "limit": 1
+    },
     {
       "type": "@app"
     },
@@ -1329,6 +1353,31 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_store_product",
+      "label": "Folosește produsul magazinului",
+      "default": false,
+      "info": "Preia produsul din Setări temă → Magazin cu un produs. Selecția de produs a acestei secțiuni rămâne salvată."
+    },
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Ancoră de navigare",
+      "info": "Pentru secțiunea principală păstrează valoarea produs. Folosește ancore unice în pagină."
+    },
+    {
+      "type": "text",
+      "id": "prelaunch_heading",
+      "label": "Titlu înainte de lansare",
+      "default": "Pregătim ceva nou."
+    },
+    {
+      "type": "richtext",
+      "id": "prelaunch_text",
+      "label": "Text înainte de lansare",
+      "default": "<p>Revenim în curând cu toate detaliile. Între timp, ne poți scrie.</p>"
+    },
     {
       "type": "product",
       "id": "product",

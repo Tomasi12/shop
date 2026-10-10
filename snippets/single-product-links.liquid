@@ -1,0 +1,19 @@
+{% comment %}
+  Shared homepage navigation for the desktop header and mobile drawer.
+  Accepts: link_class (String).
+{% endcomment %}
+<li>
+  <a href="{{ routes.root_url }}#produs" class="{{ link_class }}" data-single-product-link>
+    {{- 'single_product.navigation.product' | t -}}
+  </a>
+</li>
+<li>
+  <a href="{{ routes.root_url }}#despre" class="{{ link_class }}" data-single-product-link>
+    {{- 'single_product.navigation.about' | t -}}
+  </a>
+</li>
+<li>
+  <a href="{{ routes.root_url }}#ContactForm" class="{{ link_class }}" data-single-product-link>
+    {{- 'single_product.navigation.contact' | t -}}
+  </a>
+</li>

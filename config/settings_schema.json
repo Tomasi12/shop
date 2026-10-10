@@ -8,6 +8,31 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "Magazin cu un produs",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "single_product_mode",
+        "label": "Activează navigarea pentru un singur produs",
+        "default": true,
+        "info": "Simplifică meniul, ascunde căutarea și recomandările și direcționează cumpărătorii către produs."
+      },
+      {
+        "type": "product",
+        "id": "single_product",
+        "label": "Produsul magazinului",
+        "info": "Alege produsul după validarea ideii. Până atunci, pagina principală afișează mesajul de pregătire."
+      },
+      {
+        "type": "richtext",
+        "id": "single_product_footer_text",
+        "label": "Textul brandului în subsol",
+        "default": "<p>MATyHOUSE — Inspirat din viața de zi cu zi.</p>",
+        "info": "Înlocuiește textul din subsol cât timp modul cu un singur produs este activ."
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {

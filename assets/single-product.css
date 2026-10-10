@@ -1,0 +1,24 @@
+.single-product-anchor,
+#ContactForm {
+  scroll-margin-top: calc(var(--header-height, 100px) + 2rem);
+}
+
+.single-product-empty {
+  padding: clamp(6rem, 10vw, 12rem) 0;
+}
+
+.single-product-empty h2 {
+  margin: 1.6rem 0 2.4rem;
+}
+
+.single-product-empty .button {
+  margin-top: 2.4rem;
+}
+
+.single-product-editor-note {
+  margin: 3rem auto 0;
+  padding: 1.6rem;
+  max-width: 55rem;
+  border: 1px dashed rgba(var(--color-foreground), 0.35);
+  font-size: 1.4rem;
+}

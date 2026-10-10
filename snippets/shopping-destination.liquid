@@ -1,0 +1,12 @@
+{%- comment -%}
+  Return a shopping URL for cart and not-found links without duplicating logic.
+{%- endcomment -%}
+{%- if settings.single_product_mode -%}
+  {%- if settings.single_product != blank -%}
+    {{- settings.single_product.url | escape -}}
+  {%- else -%}
+    {{- routes.root_url -}}#produs
+  {%- endif -%}
+{%- else -%}
+  {{- routes.all_products_collection_url -}}
+{%- endif -%}

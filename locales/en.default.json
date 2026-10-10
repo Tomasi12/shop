@@ -8,6 +8,14 @@
  * ------------------------------------------------------------
  */
 {
+  "single_product": {
+    "navigation": {
+      "product": "Product",
+      "about": "About us",
+      "contact": "Contact"
+    },
+    "editor_hint": "Choose a product in Theme settings → Magazin cu un produs. The pre-launch message will be replaced by product images, pricing and purchase controls."
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Enter store using password:",

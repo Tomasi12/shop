@@ -1,3 +1,4 @@
+{%- unless settings.single_product_mode -%}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
@@ -58,6 +59,7 @@
   {%- endif -%}
 </div>
 
+{%- endunless -%}
 {% schema %}
 {
   "name": "t:sections.related-products.name",
