@@ -23,6 +23,10 @@
       "settings": {
         "use_store_product": true,
         "anchor_id": "produs",
+        "scandi_eyebrow": "Bucuria lucrurilor simple",
+        "scandi_heading": "Lucruri simple. Mai mult <em>acasă.</em>",
+        "scandi_button_label": "Descoperă MATyHOUSE",
+        "scandi_image_caption": "Acasă, în ritmul tău.",
         "prelaunch_heading": "Pregătim ceva nou.",
         "prelaunch_text": "<p>Revenim în curând cu toate detaliile. Între timp, ne poți scrie.</p>",
         "color_scheme": "scheme-1",
@@ -48,6 +52,7 @@
       "settings": {
         "anchor_id": "despre",
         "desktop_content_position": "center",
+        "editorial_layout": true,
         "content_alignment": "center",
         "color_scheme": "scheme-2",
         "full_width": true,
@@ -58,6 +63,9 @@
     "single_product_contact": {
       "type": "contact-form",
       "settings": {
+        "editorial_layout": true,
+        "eyebrow": "O conversație, un început",
+        "introduction": "<p>Ai o întrebare sau vrei să ne împărtășești o idee? Ne-ar plăcea să te auzim.</p>",
         "heading": "Hai să vorbim",
         "heading_size": "h2",
         "color_scheme": "scheme-1",

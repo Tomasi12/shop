@@ -1,5 +1,12 @@
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign use_editorial_layout = false
+  if settings.single_product_mode and settings.scandinavian_design and section.settings.editorial_layout
+    assign use_editorial_layout = true
+  endif
+-%}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -14,8 +21,12 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+<div class="color-{{ section.settings.color_scheme }} gradient{% if use_editorial_layout %} scandi-contact-section{% endif %}">
+  <div class="contact page-width{% if use_editorial_layout %} contact--editorial{% else %} page-width--narrow{% endif %} section-{{ section.id }}-padding">
+    <div class="contact__intro">
+      {%- if use_editorial_layout and section.settings.eyebrow != blank -%}
+        <p class="scandi-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {{ section.settings.heading }}
@@ -23,6 +34,10 @@
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
+      {%- if use_editorial_layout and section.settings.introduction != blank -%}
+        <div class="contact__introduction rte">{{ section.settings.introduction }}</div>
+      {%- endif -%}
+    </div>
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
@@ -144,6 +159,9 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    { "type": "checkbox", "id": "editorial_layout", "label": "Aranjament editorial scandinav", "default": false },
+    { "type": "text", "id": "eyebrow", "label": "Text deasupra titlului", "default": "O conversație, un început" },
+    { "type": "richtext", "id": "introduction", "label": "Introducere", "default": "<p>Ai o întrebare sau vrei să ne împărtășești o idee? Ne-ar plăcea să te auzim.</p>" },
     {
       "type": "inline_richtext",
       "id": "heading",

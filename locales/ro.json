@@ -9,6 +9,11 @@
  */
 {
   "single_product": {
+    "design": {
+      "image_alt": "Interior scandinav în lumină naturală, cu lemn deschis și textile în tonuri de ovăz și salvie",
+      "principles": "Ce ne inspiră",
+      "footer_caption": "Un pic de liniște. Mai mult acasă."
+    },
     "navigation": {
       "product": "Produs",
       "about": "Despre noi",

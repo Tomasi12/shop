@@ -1,4 +1,7 @@
 {% comment %}A public pre-launch message without demo prices or product claims.{% endcomment %}
+{%- if settings.single_product_mode and settings.scandinavian_design -%}
+  {% render 'scandinavian-hero' %}
+{%- else -%}
 <div class="single-product-empty color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width page-width--narrow center">
     <p class="caption-with-letter-spacing">{{ shop.name | escape }}</p>
@@ -12,3 +15,4 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}

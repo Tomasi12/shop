@@ -1,0 +1,16 @@
+{% comment %}Scoped visual tokens: the merchant's original Dawn schemes remain intact.{% endcomment %}
+{% style %}
+  body.scandi-store {
+    --scandi-canvas: {{ settings.scandi_canvas }};
+    --scandi-canvas-rgb: {{ settings.scandi_canvas.red }}, {{ settings.scandi_canvas.green }}, {{ settings.scandi_canvas.blue }};
+    --scandi-surface: {{ settings.scandi_surface }};
+    --scandi-surface-rgb: {{ settings.scandi_surface.red }}, {{ settings.scandi_surface.green }}, {{ settings.scandi_surface.blue }};
+    --scandi-ink: {{ settings.scandi_ink }};
+    --scandi-ink-rgb: {{ settings.scandi_ink.red }}, {{ settings.scandi_ink.green }}, {{ settings.scandi_ink.blue }};
+    --scandi-accent: {{ settings.scandi_accent }};
+    --scandi-accent-rgb: {{ settings.scandi_accent.red }}, {{ settings.scandi_accent.green }}, {{ settings.scandi_accent.blue }};
+    --scandi-on-accent: {{ settings.scandi_on_accent }};
+    --scandi-on-accent-rgb: {{ settings.scandi_on_accent.red }}, {{ settings.scandi_on_accent.green }}, {{ settings.scandi_on_accent.blue }};
+  }
+{% endstyle %}
+{{ 'scandinavian.css' | asset_url | stylesheet_tag }}

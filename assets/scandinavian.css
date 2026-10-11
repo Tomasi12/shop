@@ -1,0 +1,504 @@
+/* A scoped, reversible visual layer for MATyHOUSE. */
+body.scandi-store {
+  --font-heading-family: Georgia, 'Times New Roman', serif;
+  --font-heading-weight: 400;
+  --font-heading-style: normal;
+  --buttons-radius: 4px;
+  --buttons-radius-outset: 4px;
+  --inputs-radius: 3px;
+  --inputs-border-opacity: 0.35;
+  --color-background: var(--scandi-canvas-rgb);
+  --color-foreground: var(--scandi-ink-rgb);
+  --color-button: var(--scandi-accent-rgb);
+  --color-button-text: var(--scandi-on-accent-rgb);
+  --color-secondary-button-text: var(--scandi-ink-rgb);
+  --color-link: var(--scandi-ink-rgb);
+  color: var(--scandi-ink);
+  background: var(--scandi-canvas);
+  letter-spacing: 0.02rem;
+}
+
+.scandi-store .color-scheme-1,
+.scandi-store .header-wrapper,
+.scandi-store .menu-drawer,
+.scandi-store .drawer__inner {
+  --color-background: var(--scandi-canvas-rgb);
+  --gradient-background: var(--scandi-canvas);
+  --color-foreground: var(--scandi-ink-rgb);
+  --color-button: var(--scandi-accent-rgb);
+  --color-button-text: var(--scandi-on-accent-rgb);
+  --color-secondary-button-text: var(--scandi-ink-rgb);
+  --color-link: var(--scandi-ink-rgb);
+}
+
+.scandi-store .color-scheme-2,
+.scandi-store .scandi-contact-section {
+  --color-background: var(--scandi-surface-rgb);
+  --gradient-background: var(--scandi-surface);
+  --color-foreground: var(--scandi-ink-rgb);
+  --color-button: var(--scandi-accent-rgb);
+  --color-button-text: var(--scandi-on-accent-rgb);
+  --color-link: var(--scandi-ink-rgb);
+}
+
+.scandi-store .header-wrapper {
+  border-bottom-color: rgba(var(--scandi-ink-rgb), 0.13);
+}
+
+.scandi-store .header {
+  min-height: 9rem;
+}
+
+.scandi-compact-logo .header__heading-logo-wrapper {
+  display: flex;
+  align-items: center;
+  height: 3.6rem;
+  overflow: hidden;
+}
+
+.scandi-compact-logo .header__heading-logo {
+  flex-shrink: 0;
+}
+
+.scandi-store .header__heading-logo {
+  mix-blend-mode: multiply;
+}
+
+body.scandi-store #shopify-pc__banner {
+  color: var(--scandi-ink);
+  background: var(--scandi-canvas);
+  border: 1px solid rgba(var(--scandi-ink-rgb), 0.2);
+  box-shadow: 0 4px 28px rgba(var(--scandi-ink-rgb), 0.1);
+}
+
+.scandi-store .header__inline-menu {
+  justify-self: center;
+}
+
+.scandi-store .header__menu-item {
+  margin-inline: 0.5rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+.scandi-store .button {
+  min-height: 5.2rem;
+  padding-inline: 2.6rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.025em;
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.scandi-store .button .svg-wrapper {
+  width: 1.8rem;
+  margin-left: 2rem;
+}
+
+.scandi-store .button:hover {
+  box-shadow: 0 4px 16px rgba(var(--scandi-ink-rgb), 0.12);
+}
+
+.scandi-store .scandi-hero {
+  padding-top: 4.8rem;
+}
+
+.scandi-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(3rem, 5vw, 7rem);
+}
+
+.scandi-hero__copy {
+  padding-block: 3rem;
+}
+
+.scandi-store .scandi-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin: 0 0 2.8rem;
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.scandi-dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  flex-shrink: 0;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.scandi-store .scandi-hero__title {
+  margin: 0 0 2.4rem;
+  font-family: var(--font-heading-family);
+  font-size: clamp(4.8rem, 5.8vw, 8rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.scandi-hero__title em {
+  font-weight: 400;
+}
+
+.scandi-hero__description {
+  max-width: 34rem;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(var(--scandi-ink-rgb), 0.82);
+}
+
+.scandi-hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.6rem;
+  margin-top: 3.2rem;
+}
+
+.scandi-text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 4.4rem;
+  color: inherit;
+  font-size: 1.4rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.6rem;
+}
+
+.scandi-hero__status {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin: 4.2rem 0 0;
+  font-size: 1.25rem;
+  color: rgba(var(--scandi-ink-rgb), 0.78);
+}
+
+.scandi-hero__visual {
+  position: relative;
+  margin: 0;
+  background: var(--scandi-surface);
+  overflow: hidden;
+  border-radius: 2px 2px 100px 2px;
+}
+
+.scandi-hero__image {
+  display: block;
+  width: 100%;
+  height: 57rem;
+  max-height: 70vh;
+  object-fit: cover;
+  object-position: 57% center;
+}
+
+.scandi-hero__caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 6rem 3.2rem 3.2rem;
+  background: linear-gradient(transparent, rgba(22, 29, 21, 0.72));
+  color: #fffdf7;
+  font-family: var(--font-heading-family);
+  font-size: 2.2rem;
+  font-style: italic;
+}
+
+.scandi-hero__caption-mark {
+  flex-shrink: 0;
+  padding-right: 2.2rem;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  font-style: normal;
+  letter-spacing: 0.2em;
+}
+
+.scandi-hero__principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 4.8rem;
+  padding: 2.8rem 0;
+  border-top: 1px solid rgba(var(--scandi-ink-rgb), 0.2);
+}
+
+.scandi-hero__principles p {
+  display: flex;
+  gap: 1.7rem;
+  align-items: baseline;
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.scandi-hero__principles p + p {
+  border-left: 1px solid rgba(var(--scandi-ink-rgb), 0.2);
+  padding-left: 3rem;
+}
+
+.scandi-hero__principles span {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.scandi-store .rich-text--editorial {
+  margin-top: 2rem;
+  padding-block: 8rem;
+  background: var(--scandi-canvas);
+  border-top: 1px solid rgba(var(--scandi-ink-rgb), 0.14);
+}
+
+.scandi-store .rich-text--editorial .rich-text__wrapper {
+  width: 100%;
+}
+
+.scandi-store .rich-text--editorial .rich-text__blocks {
+  display: grid;
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: 3rem 6rem;
+  max-width: none;
+  text-align: left;
+}
+
+.scandi-store .rich-text--editorial .rich-text__heading {
+  max-width: 24rem;
+  margin: 1rem 0 0;
+  font-family: var(--font-body-family);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.scandi-store .rich-text--editorial .rich-text__text {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-size: clamp(2.5rem, 3vw, 3.6rem);
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+}
+
+.scandi-store .rich-text--editorial .rich-text__text p {
+  margin-top: 0;
+}
+
+.scandi-store .rich-text--editorial .rich-text__buttons {
+  grid-column: 2;
+}
+
+.scandi-store .contact--editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 6rem 9rem;
+  padding-block: 8rem;
+}
+
+.scandi-store .contact--editorial .title {
+  margin: 0 0 2rem;
+  font-size: clamp(4rem, 4.5vw, 6.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.scandi-store .contact__introduction {
+  max-width: 32rem;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.scandi-store .contact--editorial .field__input {
+  background: rgba(var(--scandi-canvas-rgb), 0.45);
+}
+
+.scandi-store .contact--editorial .text-area {
+  min-height: 12rem;
+}
+
+.scandi-store .contact--editorial .contact__button {
+  margin-top: 2rem;
+}
+
+.scandi-store .footer {
+  --color-background: var(--scandi-accent-rgb);
+  --gradient-background: var(--scandi-accent);
+  --color-foreground: var(--scandi-on-accent-rgb);
+  --color-link: var(--scandi-on-accent-rgb);
+  --color-button: var(--scandi-on-accent-rgb);
+  --color-button-text: var(--scandi-accent-rgb);
+  --color-secondary-button-text: var(--scandi-on-accent-rgb);
+  padding-top: 5.6rem;
+}
+
+.scandi-footer-brand {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid rgba(var(--scandi-on-accent-rgb), 0.22);
+}
+
+.scandi-footer-brand p {
+  margin: 0;
+  font-family: var(--font-heading-family);
+  font-size: clamp(4.4rem, 7vw, 8rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.scandi-footer-brand > span {
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.scandi-store .footer-block__heading {
+  font-family: var(--font-body-family);
+  font-size: 1.3rem;
+  letter-spacing: 0.07em;
+}
+
+.scandi-store .product__title {
+  letter-spacing: -0.04em;
+}
+
+.scandi-store .product__media-wrapper {
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 989px) {
+  .scandi-store .header {
+    min-height: 7.6rem;
+  }
+
+  .scandi-hero__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .scandi-hero__image {
+    height: 52rem;
+  }
+
+  .scandi-store .scandi-hero__title {
+    font-size: clamp(4.2rem, 6vw, 6.4rem);
+  }
+
+  .scandi-store .contact--editorial {
+    gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .scandi-store .scandi-hero {
+    padding-top: 1.6rem;
+  }
+
+  .scandi-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .scandi-hero__copy {
+    padding: 2.4rem 0 0;
+  }
+
+  .scandi-store .scandi-eyebrow {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  .scandi-store .scandi-hero__title {
+    max-width: 11em;
+    font-size: clamp(4.6rem, 11.5vw, 7rem);
+  }
+
+  .scandi-hero__description {
+    max-width: 38rem;
+    font-size: 1.5rem;
+  }
+
+  .scandi-hero__actions {
+    gap: 1.8rem;
+    margin-top: 2.4rem;
+  }
+
+  .scandi-hero__status {
+    margin-top: 2.6rem;
+  }
+
+  .scandi-hero__image {
+    height: auto;
+    max-height: none;
+    aspect-ratio: 1.1;
+    object-position: 57% center;
+  }
+
+  .scandi-hero__visual {
+    border-bottom-right-radius: 6rem;
+  }
+
+  .scandi-hero__caption {
+    padding: 5rem 2rem 2rem;
+    font-size: 2rem;
+  }
+
+  .scandi-hero__principles {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    margin-top: 2.8rem;
+    padding-block: 2.4rem;
+  }
+
+  .scandi-hero__principles p + p {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .scandi-store .rich-text--editorial {
+    padding-block: 4.8rem;
+  }
+
+  .scandi-store .rich-text--editorial .rich-text__blocks {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  .scandi-store .rich-text--editorial .rich-text__buttons {
+    grid-column: 1;
+  }
+
+  .scandi-store .contact--editorial {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-block: 4.8rem;
+  }
+
+  .scandi-store .contact__introduction {
+    max-width: none;
+  }
+
+  .scandi-footer-brand {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scandi-store .button {
+    transition: none;
+  }
+}

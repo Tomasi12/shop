@@ -28,6 +28,12 @@
 {%- endstyle -%}
 
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- if settings.single_product_mode and settings.scandinavian_design -%}
+    <div class="scandi-footer-brand page-width">
+      <p>{{ shop.name | escape }}</p>
+      <span>{{ 'single_product.design.footer_caption' | t }}</span>
+    </div>
+  {%- endif -%}
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -255,7 +261,7 @@
           {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
 
 			<div style="text-align: center; margin-top: 20px;">
-				<h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold; color: #000;">Mențiuni legale</h3>
+				<h3 style="margin-bottom: 15px; font-size: 18px; font-weight: bold; color: inherit;">Mențiuni legale</h3>
 
 				<!-- Imagine buton pentru ANPC -->
 				<a href="https://anpc.ro/" target="_blank" style="display: block; margin-bottom: 10px;">

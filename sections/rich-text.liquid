@@ -15,7 +15,7 @@
 {%- endstyle -%}
 
 <div class="isolate single-product-anchor{% unless section.settings.full_width %} page-width{% endunless %}"{% if section.settings.anchor_id != blank %} id="{{ section.settings.anchor_id | handleize }}" tabindex="-1"{% endif %}>
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.editorial_layout %} rich-text--editorial{% endif %}{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
     <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
       <div class="rich-text__blocks {{ section.settings.content_alignment }}">
         {%- for block in section.blocks -%}
@@ -103,6 +103,13 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "editorial_layout",
+      "label": "Aranjament editorial scandinav",
+      "default": false,
+      "info": "Așază titlul și povestea în două coloane când designul scandinav este activ."
+    },
     {
       "type": "text",
       "id": "anchor_id",

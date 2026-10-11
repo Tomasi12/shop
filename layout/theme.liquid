@@ -300,9 +300,12 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {%- if settings.single_product_mode and settings.scandinavian_design -%}
+      {% render 'scandinavian-theme' %}
+    {%- endif -%}
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="gradient{% if settings.single_product_mode and settings.scandinavian_design %} scandi-store{% if settings.scandi_compact_logo %} scandi-compact-logo{% endif %}{% endif %}{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>

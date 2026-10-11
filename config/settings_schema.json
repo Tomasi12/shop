@@ -33,6 +33,24 @@
     ]
   },
   {
+    "name": "Design scandinav",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "scandinavian_design",
+        "label": "Activează designul scandinav",
+        "default": true,
+        "info": "Se aplică în modul Magazin cu un produs. Setările originale Dawn rămân salvate."
+      },
+      { "type": "checkbox", "id": "scandi_compact_logo", "label": "Compactează spațiul din jurul siglei", "default": true, "info": "Potrivit pentru sigla actuală, cu spațiu alb deasupra și dedesubt. Dezactivează dacă folosești o siglă înaltă." },
+      { "type": "color", "id": "scandi_canvas", "label": "Fundal — ovăz", "default": "#f0eee7" },
+      { "type": "color", "id": "scandi_surface", "label": "Suprafețe — salvie", "default": "#dfe4d8" },
+      { "type": "color", "id": "scandi_ink", "label": "Text", "default": "#283b30" },
+      { "type": "color", "id": "scandi_accent", "label": "Butoane și subsol", "default": "#354e3e" },
+      { "type": "color", "id": "scandi_on_accent", "label": "Text pe fundal închis", "default": "#f7f5ee" }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {

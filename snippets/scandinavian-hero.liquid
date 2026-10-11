@@ -1,0 +1,47 @@
+{% comment %}Pre-launch brand imagery, replaced by the real product once one is selected.{% endcomment %}
+<div class="scandi-hero page-width">
+  <div class="scandi-hero__grid">
+    <div class="scandi-hero__copy">
+      <p class="scandi-eyebrow"><span class="scandi-dot" aria-hidden="true"></span>{{ section.settings.scandi_eyebrow | escape }}</p>
+      <h2 class="scandi-hero__title">{{ section.settings.scandi_heading }}</h2>
+      <div class="scandi-hero__description rte">{{ section.settings.prelaunch_text }}</div>
+      <div class="scandi-hero__actions">
+        <a class="button" href="{{ routes.root_url }}#despre" data-single-product-link>
+          {{ section.settings.scandi_button_label | escape }}
+          <span class="svg-wrapper" aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span>
+        </a>
+        <a class="scandi-text-link" href="{{ routes.root_url }}#ContactForm" data-single-product-link>
+          {{ 'single_product.navigation.contact' | t }}
+        </a>
+      </div>
+      <p class="scandi-hero__status"><span class="scandi-dot" aria-hidden="true"></span>{{ section.settings.prelaunch_heading | escape }}</p>
+    </div>
+    <figure class="scandi-hero__visual">
+      {%- if section.settings.scandi_image != blank -%}
+        {{ section.settings.scandi_image | image_url: width: 1600 | image_tag: widths: '480, 750, 1100, 1600', sizes: '(min-width: 990px) 55vw, 100vw', loading: 'eager', fetchpriority: 'high', class: 'scandi-hero__image' }}
+      {%- else -%}
+        <img
+          src="{{ 'scandinavian-home.jpg' | asset_url }}"
+          alt="{{ 'single_product.design.image_alt' | t }}"
+          width="1536"
+          height="1024"
+          loading="eager"
+          fetchpriority="high"
+          class="scandi-hero__image"
+        >
+      {%- endif -%}
+      <figcaption class="scandi-hero__caption">
+        <span>{{ section.settings.scandi_image_caption | escape }}</span>
+        <span class="scandi-hero__caption-mark" aria-hidden="true">M / H</span>
+      </figcaption>
+    </figure>
+  </div>
+  <div class="scandi-hero__principles" aria-label="{{ 'single_product.design.principles' | t }}">
+    <p><span aria-hidden="true">01</span>{{ section.settings.scandi_principle_1 | escape }}</p>
+    <p><span aria-hidden="true">02</span>{{ section.settings.scandi_principle_2 | escape }}</p>
+    <p><span aria-hidden="true">03</span>{{ section.settings.scandi_principle_3 | escape }}</p>
+  </div>
+  {%- if request.design_mode -%}
+    <p class="single-product-editor-note">{{ 'single_product.editor_hint' | t }}</p>
+  {%- endif -%}
+</div>

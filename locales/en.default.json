@@ -9,6 +9,11 @@
  */
 {
   "single_product": {
+    "design": {
+      "image_alt": "Sunlit Scandinavian interior with light oak and textiles in oat and sage tones",
+      "principles": "What inspires us",
+      "footer_caption": "A little calm. A little more home."
+    },
     "navigation": {
       "product": "Product",
       "about": "About us",
